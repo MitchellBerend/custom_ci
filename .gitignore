@@ -1,2 +1,4 @@
-scanner/Dockerfile
-tester/Dockerfile
+**/Dockerfile
+/.vscode
+Pipfile
+Pipfile.lock
