@@ -5,8 +5,6 @@ import mysql.connector as sql
 from os import environ
 from datetime import datetime
 
-"""
-"""
 app = Flask(__name__)
 
 api = Api(app)
