@@ -21,7 +21,7 @@ def get_targets(**login_info):
 
 
 def scan(path,head):
-    cwd = "../home" + path + "/.git/refs/heads"
+    cwd = "../home/mitchell" + path + "/.git/refs/heads"
     command = ["cat", head]
     text = subprocess.run(command,cwd=cwd, text=True, capture_output=True)
     return text.stdout[:7]
