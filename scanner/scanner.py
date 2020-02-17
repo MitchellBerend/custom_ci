@@ -17,6 +17,7 @@ for item in targets:
     print(f"""Checking {item["project_name"]}""")
     print(last_com)
     current_com = lib.scan(item["path"],item["branch"])
+    item["current_commit"] = current_com
     if last_com != current_com:
         print(f"""sending test signal for {item["project_name"]}""")
         sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)

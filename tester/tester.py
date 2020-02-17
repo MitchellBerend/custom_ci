@@ -19,7 +19,8 @@ while True:
     client, address = sock.accept()
     data = client.recv(10000).decode("utf-8")
     data = eval(data)
-    command = ["python", "test/"+data["file_name"]]
+
+    command = ["python", "test/" + data["file_name"]]
     cwd="../home/mitchell" + data["path"]
     shell = subprocess.run(command, cwd=cwd, text=True, capture_output=True)
     print("shell")
@@ -27,7 +28,7 @@ while True:
         smtp.ehlo()
         smtp.starttls()
         smtp.login(environ["email"],environ["password"])
-        subject = f"""{data["project_name"]} commit hash {data["last_commit"]} test ran at {str(datetime.now())[:19]}"""
+        subject = f"""{data["project_name"]} commit hash {data["current_commit"]} test ran at {str(datetime.now())[:19]}"""
         body = str(shell.stdout) + str(shell.stderr)
         print(body)
         msg = f"""Subject: {subject}\n\n{body}"""
