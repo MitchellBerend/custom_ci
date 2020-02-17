@@ -6,7 +6,7 @@ def get_new_hash(path,branch):
     path
     branch
     """
-    cwd = "../home" + path + "/.git/refs/heads"
+    cwd = "../home/mitchell" + path + "/.git/refs/heads"
     command = ["cat", branch]
     text = subprocess.run(command,cwd=cwd, text=True, capture_output=True)
     return text.stdout[:7]

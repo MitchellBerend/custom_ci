@@ -20,7 +20,7 @@ while True:
     data = client.recv(10000).decode("utf-8")
     data = eval(data)
     command = ["python", "test/"+data["file_name"]]
-    cwd="../home" + data["path"]
+    cwd="../home/mitchell" + data["path"]
     shell = subprocess.run(command, cwd=cwd, text=True, capture_output=True)
     print("shell")
     with smtplib.SMTP(host="smtp.gmail.com",port=587) as smtp:
