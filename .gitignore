@@ -1,2 +1,7 @@
 docker-compose.yml
 design.txt
+
+
+#Added by cargo
+
+/target
