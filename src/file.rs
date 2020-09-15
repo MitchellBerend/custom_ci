@@ -25,3 +25,27 @@ pub fn read_conf() -> Config {
     return data;
 }
 
+pub fn read_dev_hash(config: &Config) -> bool {
+    let path = format!("{}{}{}", &config.path, "/.git/refs/heads/", &config.dev_branch);
+    let mut file = File::open(path).expect("Could not read file");
+    let mut content = String::new();
+    file.read_to_string(&mut content).expect("Could not read file.");
+    if content.trim() == config.dev_hash {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+pub fn read_master_hash(config: &Config) -> bool {
+    let path = format!("{}{}{}", &config.path, "/.git/refs/heads/", &config.master_branch);
+    let mut file = File::open(path).expect("Could not read file");
+    let mut content = String::new();
+    file.read_to_string(&mut content).expect("Could not read file.");
+    if content.trim() == config.master_hash {
+        return true;
+    } else {
+        return false;
+    }
+}

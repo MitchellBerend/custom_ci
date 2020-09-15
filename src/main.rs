@@ -2,6 +2,7 @@ mod file;
 
 fn main() {
     let t = file::read_conf();
-    println!("{}", t.name);
+    file::read_dev_hash(&t);
+    file::read_master_hash(&t);
 
 }
