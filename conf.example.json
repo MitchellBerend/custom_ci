@@ -1,0 +1,11 @@
+{
+        "name":"",
+        "enabled":true,
+        "dev branch":"",
+        "dev hash":"",
+        "master branch":"",
+        "master hash":"",
+        "continuous integration":true,
+        "continuous delivery":true,
+        "path":""
+}
