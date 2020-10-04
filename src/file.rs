@@ -56,8 +56,9 @@ pub fn read_target_hash(config: &Config) -> bool {
 }
 
 
-pub fn merge_branch(feature_branch: &String, target_branch: &String) {
-    // git -C path checkout feature_branch && git merge master_branch && run tests 
+pub fn merge_branch(feature_branch: &String, master_branch: &String) {
+    // git -C path checkout feature_branch && git merge master_branch && run tests && git -C path
+    // checkout  master_branch
     let mut shell = Command::new("bash");
     let command = format!("git checkout", );
     shell
